@@ -7,19 +7,13 @@ const BackgroundComponent = styled.div`
     align-items:center;
     width:100%;
     height:100vh;
-    background-image:linear-gradient(
-                     to right bottom, 
-                     ${props => props.lightColor}, 
-                     ${props => props.darkColor});
+    background-color:${props => props.backgroundColor};
 `
 
-const Background = ({children,
-                     firstGradientColor,
-                     secondGradientColor}) => {
+const Background = ({children,backgroundColor}) => {
     return (
         <BackgroundComponent 
-            lightColor={firstGradientColor} 
-            darkColor={secondGradientColor}>
+            backgroundColor={backgroundColor}>
             {children}
         </BackgroundComponent>
     );
