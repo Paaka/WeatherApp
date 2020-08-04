@@ -30,7 +30,10 @@ const GetNameOfDay = (day) => {
 const WeatherWidget = () => {
     const Today =  GetNameOfDay(new Date().getDay());
 
-    const todaysDate = new Date().toDateString().slice(4,10);
+    const todaysDateArray = new Date().toDateString().split(' ');
+
+    const todaysDate = `${todaysDateArray[2]} ${todaysDateArray[1]} ${todaysDateArray[3]}`
+
 
 
     
@@ -39,7 +42,8 @@ const WeatherWidget = () => {
         <MainContainer>
             <Card 
                 picture={BackgroundImg}
-                today={Today}/>
+                today={Today}
+                date={todaysDate}/>
         </MainContainer>
     )
 }

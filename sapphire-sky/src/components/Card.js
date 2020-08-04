@@ -1,6 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Components :
+import DivImage from './DivImage';
+import ImageWithText from './ImageWithText';
+import Paragraph from './Paragraph';
+
+// Assets :
+import LocationPin from '../assets/svgs/white/pin.svg';
+import Sun from '../assets/svgs/white/sun.svg';
+
 const Wrapper = styled.div`
     position:absolute;
     width:50%;
@@ -14,7 +23,7 @@ const Wrapper = styled.div`
                         rgba(134, 234, 239, 0.52),
                         rgba(84, 94, 230, 0.73)),
         url(${props => props.picture});
-    padding:10px;
+    padding:20px;
 
     :hover{
         transform:scale(1.02);
@@ -23,15 +32,21 @@ const Wrapper = styled.div`
 
 const StyledH2 = styled.h2`
     color:white;
-    font-size:32px;
+    font-size:26px;
     font-family:'Montserrat','sans-serif';
-    font-weight:800;
+    font-weight:600;
 ` 
 
-const Card = ({picture, today}) => {
+
+
+const Card = ({picture, today, date}) => {
     return (
         <Wrapper picture={picture}>
             <StyledH2>{today}</StyledH2>
+            <Paragraph>{date}</Paragraph>
+            <ImageWithText leftImg={LocationPin}>Olso, Nr</ImageWithText>
+            <DivImage width={75} height={75} bgSize={70} img={Sun} />
+            
         </Wrapper>
     );
 }
