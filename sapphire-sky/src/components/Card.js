@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import DivImage from './DivImage';
 import ImageWithText from './ImageWithText';
 import Paragraph from './Paragraph';
+import StyledHeading from './Heading';
 
 // Assets :
 import LocationPin from '../assets/svgs/white/pin.svg';
@@ -12,10 +13,13 @@ import Sun from '../assets/svgs/white/sun.svg';
 
 const Wrapper = styled.div`
     position:absolute;
+    top:-1vh;
     width:50%;
     height:72vh;
-    background-color:red;
-    top:-1vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:20px;
     border-radius:2rem;
     transition:transform 0.25s ease-in;
     background-image: 
@@ -23,30 +27,25 @@ const Wrapper = styled.div`
                         rgba(134, 234, 239, 0.52),
                         rgba(84, 94, 230, 0.73)),
         url(${props => props.picture});
-    padding:20px;
 
     :hover{
         transform:scale(1.02);
     }
 `
 
-const StyledH2 = styled.h2`
-    color:white;
-    font-size:26px;
-    font-family:'Montserrat','sans-serif';
-    font-weight:600;
-` 
-
-
-
 const Card = ({picture, today, date}) => {
     return (
         <Wrapper picture={picture}>
-            <StyledH2>{today}</StyledH2>
-            <Paragraph>{date}</Paragraph>
-            <ImageWithText leftImg={LocationPin}>Olso, Nr</ImageWithText>
-            <DivImage width={75} height={75} bgSize={70} img={Sun} />
-            
+            <div>
+                <StyledHeading>{today}</StyledHeading>
+                <Paragraph>{date}</Paragraph>
+                <ImageWithText leftImg={LocationPin}>Olso, Nr</ImageWithText>
+            </div>
+            <div>
+                <DivImage width={110} height={110} bgSize={105} img={Sun} />
+                <StyledHeading weight={800} size={72}>29°C</StyledHeading>
+                <Paragraph weight={700} size={20}>Sunny</Paragraph>
+            </div>
         </Wrapper>
     );
 }
