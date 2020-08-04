@@ -33,7 +33,13 @@ const Wrapper = styled.div`
     }
 `
 
-const Card = ({picture, today, date}) => {
+const Card = (  
+                {picture,
+                 today,
+                 date, 
+                 temperature, 
+                 additionalDescripiton}
+             ) => {
     return (
         <Wrapper picture={picture}>
             <div>
@@ -43,11 +49,11 @@ const Card = ({picture, today, date}) => {
             </div>
             <div>
                 <DivImage width={110} height={110} bgSize={105} img={Sun} />
-                <StyledHeading weight={800} size={72}>29°C</StyledHeading>
-                <Paragraph weight={700} size={20}>Sunny</Paragraph>
+                <StyledHeading weight={800} size={72}>{temperature}</StyledHeading>
+                <Paragraph weight={700} size={20}>{additionalDescripiton}</Paragraph>
             </div>
         </Wrapper>
-    );
+           );
 }
 
 export default Card;

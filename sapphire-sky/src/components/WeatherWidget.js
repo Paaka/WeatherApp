@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Colors from '../constants/Colors';
 import Card from './Card';
 import BackgroundImg from '../assets/beach.jpg';
+import AdditionalInfo from './AdditionalInfo';
 
 const MainContainer = styled.div`
     position:relative;
@@ -10,7 +11,7 @@ const MainContainer = styled.div`
     height:70vh;
     border-radius:2rem;
     background-color:${Colors.widgetGrey};
-`
+`;
 
 const GetNameOfDay = (day) => {
     switch(day){
@@ -43,7 +44,10 @@ const WeatherWidget = () => {
             <Card 
                 picture={BackgroundImg}
                 today={Today}
-                date={todaysDate}/>
+                date={todaysDate}
+                temperature="29°C"
+                additionalDescripiton="Sunny"/>
+            <AdditionalInfo />
         </MainContainer>
     )
 }
