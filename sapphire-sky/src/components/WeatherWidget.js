@@ -30,14 +30,8 @@ const GetNameOfDay = (day) => {
 
 const WeatherWidget = () => {
     const Today =  GetNameOfDay(new Date().getDay());
-
     const todaysDateArray = new Date().toDateString().split(' ');
-
     const todaysDate = `${todaysDateArray[2]} ${todaysDateArray[1]} ${todaysDateArray[3]}`
-
-
-
-    
 
     return(
         <MainContainer>
