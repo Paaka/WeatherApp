@@ -8,6 +8,7 @@ import Button from './Button';
 const Wrapper = styled.div`
     display:flex;
     flex-direction:column;
+    justify-content:space-around;
     width:50%;
     height:100%;
     margin-left:52%;

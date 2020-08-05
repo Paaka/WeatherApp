@@ -15,7 +15,6 @@ const Wrapper = styled.div`
 const ImageWithText = ({children, leftImg}) => {
     return (
         <Wrapper>
-            {console.log(leftImg)}
             <DivImage img={leftImg}/>
             <Paragraph>{children}</Paragraph>
         </Wrapper>

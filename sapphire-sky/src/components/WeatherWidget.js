@@ -33,6 +33,10 @@ const WeatherWidget = () => {
     const todaysDateArray = new Date().toDateString().split(' ');
     const todaysDate = `${todaysDateArray[2]} ${todaysDateArray[1]} ${todaysDateArray[3]}`
 
+    const changeLocationHandler = () => {
+        console.log('work');
+    };
+
     return(
         <MainContainer>
             <Card 
@@ -41,7 +45,7 @@ const WeatherWidget = () => {
                 date={todaysDate}
                 temperature="29°C"
                 additionalDescripiton="Sunny"/>
-            <AdditionalInfo />
+            <AdditionalInfo onClickFn={changeLocationHandler}/>
         </MainContainer>
     )
 }
